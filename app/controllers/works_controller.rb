@@ -14,12 +14,12 @@ class WorksController < ApplicationController
       @work = Work.new(comment_id: params[:comment_id])
     else
       @work = Work.new
-      @work.build_comment
+      # @work.build_comment
     end
   end
 
   def create
-    @work = Work.new(brand_params)
+    @work = Work.new(work_params)
     if @work.save 
         redirect_to work_path(@work)
     else
