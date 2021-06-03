@@ -1,6 +1,6 @@
 <h1>Submit a new art piece!</h1>
 
-<%= render partial: "layout/error", locals: {object: @work} %>
+<%= render partial: "layouts/error", locals: {object: @work} %>
 
 <%= form_for @work do |f| %>
     <%= render partial: "form", locals: { in_the_partial |f| }
