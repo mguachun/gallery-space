@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  get 'comments/create'
-  get 'works/new'
-  get 'works/create'
-  get 'users/new'
-  get 'users/create'
+  # get 'comments/new'
+  # get 'comments/create'
+  # get 'works/new'
+  # get 'works/create'
+  # get 'users/new'
+  # get 'users/create'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/login', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'user#create'
