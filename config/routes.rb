@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   # get 'works/create'
   # get 'users/new'
   # get 'users/create'
+  # get 'works/index'
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/signup' => 'users#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
-  get '/signup', to: 'users#new'
-  post '/signup', to: 'user#create'
   resources :users 
   resources :works
   resources :comments, only: [:new, :index, :create, :edit]
