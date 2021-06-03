@@ -1,7 +1,15 @@
-<h1>All Artwork</h1>
+# <h1>All Artwork</h1>
 
-<ul>
-<% @works.all.each do |work| %> 
-    <li><%= link_to work.name, work_comments_path(work) %></li>
+# <ul>
+# <% @works.all.each do |work| %> 
+#     <li><%= link_to work.name %></li>
+# <% end %>
+# </ul>
+<h1> <%=current_user.email%>'s Art Collection!  </h1>
+<h2> Index View </h2>
+<% if logged_in?  %>
+  <h3>Logged in user:  <%= current_user.email %></h3>
 <% end %>
-</ul>
+<% @collections.each do |c|  %> 
+  <a href="/collections/<%=c.id%>"><%=c.title %></a> <br>
+<% end %>
