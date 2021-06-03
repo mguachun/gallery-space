@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :redirect_if_not_logged_in
+  # before_action :redirect_if_not_logged_in
 
   def index
     @works = Work.all
@@ -19,15 +19,12 @@ class WorksController < ApplicationController
   end
 
   def create
-    redirect_if_not_logged_in
-    work = current_user.works.build(params)
-    work.save
-  end
-
-  if work.save
-    redirect_to works_path
-  else
-    render :new
+    @work = Work.new(brand_params)
+    if @work.save 
+        redirect_to work_path(@work)
+    else
+        render :new
+    end
   end
 
   def edit
@@ -55,11 +52,6 @@ class WorksController < ApplicationController
   def work_params
     params.require(:work).permit(:artist, :title, :year, :location, :medium, :comment_id, comment_attributes: [:headline, :description])
   end
-
-
-
-  end
-
 
 
 
