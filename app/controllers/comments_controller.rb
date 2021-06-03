@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
 
 
   def new
-    if params[:user_id] && @comment = Comment.find(params[:user_id])
-      
+    
+
 
   end
 
