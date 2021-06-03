@@ -14,10 +14,10 @@ class SessionsController < ApplicationController
 
     def create 
         #if they are logging in the "normal" way
-        u = User.find_by_email(params[:user][:email])
+        user = User.find_by_email(params[:user][:email])
         if u && u.authenticate(params[:user][:password])
-            session[:user_id] = u.id
-            redirect_to user_path(u)
+            session[:user_id] = user.id
+            redirect_to user_path(user)
         else
             flash[:message] = "Invalid credentials. Please try again."
             redirect_to '/login'
