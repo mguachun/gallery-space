@@ -1,0 +1,7 @@
+<h1>All Artwork</h1>
+
+<ul>
+<% @works.all.each do |work| %> 
+    <li><%= link_to work.name, work_comments_path(work) %></li>
+<% end %>
+</ul>

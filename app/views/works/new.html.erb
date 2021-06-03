@@ -1,2 +1,15 @@
-<h1>Works#new</h1>
-<p>Find me in app/views/works/new.html.erb</p>
+<h1>Submit a new art piece!</h1>
+
+<%= render partial: "layout/error", locals: {object: @work} %>
+
+<%= form_for @work do |f| %>
+    <%= render partial: "form", locals: { in_the_partial |f| }
+    <h3>And add a comment:</h3>
+    <%= f.fields_for :works do |s| %>
+        <%= s.label "Headline" %>
+        <%= s.text_field :headline %>
+        <%= s.label "Comment" %>
+        <%= s.text_field :comment %>
+        <% end %>
+        <%= f.submit %>
+    <% end %>
