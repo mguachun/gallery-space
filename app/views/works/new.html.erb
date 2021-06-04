@@ -1,15 +1,15 @@
 <h1>Submit a new art piece!</h1>
 
-<%= render partial: "layouts/error", locals: {object: @work} %>
-
-<%= form_for @work do |f| %>
-    <%= render partial: "form", locals: { in_the_partial |f| }
-    <h3>And add a comment:</h3>
-    <%= f.fields_for :works do |s| %>
-        <%= s.label "Headline" %>
-        <%= s.text_field :headline %>
-        <%= s.label "Comment" %>
-        <%= s.text_field :comment %>
-        <% end %>
-        <%= f.submit %>
+<%= form_for(@work) do |f| %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title %><br></br>
+    <%= f.label "Artist" %>
+    <%= f.text_field :artist %><br></br>
+    <%= f.label "Year" %>
+    <%= f.text_field :year %><br></br>
+    <%= f.label "Medium" %>
+    <%= f.text_field :medium %><br></br>
+    <h2> Add a Comment: </h2>
+    <%= f.text_field :comment_id %><br></br>
+    <%= f.submit %>
     <% end %>
