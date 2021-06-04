@@ -1,11 +1,18 @@
 <h1>Show Page</h1>
 
-<h2> Artist: <%= @work.artist %> </h2>
-<h2> Title: <%= @work.name %> </h2>
-<h2> Year Made: <%= @work.year %> </h2>
-<h2> Medium: <%= @work.medium %> </h2>
+<%= form_for(@work) do |f| %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title %><br></br>
+    <%= f.label "Artist" %>
+    <%= f.text_field :artist %><br></br>
+    <%= f.label "Year" %>
+    <%= f.text_field :year %><br></br>
+    <%= f.label "Medium" %>
+    <%= f.text_field :medium %><br></br>
+    <h2> Add a Comment: </h2>
+    <%= f.text_field :comment_id %><br></br>
+    <%= f.submit %>
+    <% end %>
 
-<h2> Comments: </h2>
-<%= @work.comments %>
 
 
