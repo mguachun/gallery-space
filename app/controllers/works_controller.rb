@@ -1,6 +1,5 @@
 class WorksController < ApplicationController
 
-
   def index
     @works = Work.all
   end
@@ -47,5 +46,5 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:artist, :title, :year, :location, :medium, :comment_id, comment_attributes: [:headline, :description])
+    params.require(:work).permit(:artist, :title, :year, :location, :medium, :comment_id)
 end
