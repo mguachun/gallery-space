@@ -16,10 +16,11 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
+    @work.user_id = current_user.id
     if @work.save 
-        redirect_to work_path
+      redirect_to work_path(@work)
     else
-        render :new
+      render :new
     end
   end
 
@@ -46,5 +47,5 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:artist, :title, :year, :location, :medium, :comment_id)
-end
+    params.require(:work).permit(:artist, :title, :artist, :year, :medium)
+  end
