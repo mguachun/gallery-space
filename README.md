@@ -1,5 +1,4 @@
 # README
-GallerySpace on Rails 
     Welcome to GallerySpace on Rails! This app is created to curate works of art and comments for your own virtual gallery. 
 
 
