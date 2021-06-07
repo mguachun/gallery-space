@@ -1,24 +1,37 @@
 # README
+GallerySpace on Rails 
+    Welcome to GallerySpace on Rails! This app is created to curate works of art and comments for your own virtual gallery. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Installation:
 
-* Ruby version
+* Ruby version => ruby '2.6.1'
 
-* System dependencies
+* System dependencies => bundle install
 
 * Configuration
 
-* Database creation
+* Database creation => sqlite3 for ActiveRecord
 
-* Database initialization
+* Database initialization: If you want to add sample data run rails db:seed
 
-* How to run the test suite
+* How to run the test suite : Clone and run:
+
+bundle install
+
+# setup the db
+rails db:create 
+
+rails db:migrate
+
+# if you want to add sample data
+rails db:seed
+
+# start the server
+rails s
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment instructions: To run this app run rails s in the terminal. This will deploy the app in your local server. Copy and paste the local host URL into your personal browser and press enter. 
 
 * ...
