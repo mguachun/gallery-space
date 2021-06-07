@@ -19,15 +19,15 @@ Installation:
 
 bundle install
 
-# setup the db
+# Setup the db
 rails db:create 
 
 rails db:migrate
 
-# if you want to add sample data
+# To add sample data
 rails db:seed
 
-# start the server
+# Start the server
 rails s
 
 * Services (job queues, cache servers, search engines, etc.)
