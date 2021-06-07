@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
-  # get 'comments/new'
-  # get 'comments/create'
-  # get 'works/new'
-  # get 'works/create'
-  # get 'users/new'
-  # get 'users/create'
-  # get 'works/index'
 
   root to: 'sessions#welcome'
 
   get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy'
 
   resources :users 
   resources :works
