@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # get 'users/create'
   # get 'works/index'
 
+  root to: 'sessions#welcome'
+
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
