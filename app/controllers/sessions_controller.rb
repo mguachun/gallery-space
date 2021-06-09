@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     end
 
     def create 
-        #if they are logging in the "normal" way
+    
         user = User.find_by_email(params[:user][:email])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
         end
     end
     def logged_in
-          # check that they register successful
+          # check that they register successfully
           if user.valid? 
             session[:user_id] = user.id   #log them in
             redirect_to user_path(user)
