@@ -19,14 +19,14 @@ users = User.create([
 { email: "hg2020@gmail.com", password:"briggs"} ])
 
 works = Work.create([
-    {title: "Mona Lisa" , artist: "Leonard da Vinci" , year: "1503" , medium: "oil" },
-    {title:"Guernica" , artist: "Pablo Picasso", year:"1937" , medium:"oil" },
-    {title: "The Birth of Venus" , artist: "Sandro Botticelli" , year: "1485" , medium:"tempera" },
-    {title: "The Kiss" , artist: "Gustav Klimt", year:"1907", medium:"oil"},
-    {title: "American Gothic", artist: "Grant Wood", year: "1930" , medium: "oil"},
-    {title: "Nighthawks" , artist: "Edward Hopper", year:"1942", medium: "oil" },
-    {title: "The Nightwatch", artist: "Rembrandt", year: "1642" , medium: "oil" },
-    {title: "Campbell's Soup Cans", artist: "Andy Warhol" , year: "1961" , medium: "syntheic polymer paint"},
-    {title: "The Great Wave off Kanagawa", artist:"Hokusai", year: "1820" , medium: "print" },
-    {title: "David", artist:"Michelangelo", year: "1501" , medium: "marble" }])
+{title: "Mona Lisa", artist: "Leonard da Vinci" , year: 1503 , medium: "oil" },
+{title:"Guernica", artist: "Pablo Picasso", year:1937 , medium:"oil" },
+{title: "The Birth of Venus", artist: "Sandro Botticelli" , year: 1485 , medium:"tempera" },
+{title: "The Kiss", artist: "Gustav Klimt", year:1907, medium:"oil"},
+{title: "American Gothic", artist: "Grant Wood", year: 1930 , medium: "oil"},
+{title: "Nighthawks", artist: "Edward Hopper", year:1942, medium: "oil" },
+{title: "The Nightwatch", artist: "Rembrandt", year: 1642 , medium: "oil" },
+{title: "Campbell's Soup Cans", artist: "Andy Warhol" , year: 1961 , medium: "syntheic polymer paint"},
+{title: "The Great Wave off Kanagawa", artist:"Hokusai", year: 1820 , medium: "print" },
+{title: "David", artist:"Michelangelo", year: 1501 , medium: "marble" } ])
 
