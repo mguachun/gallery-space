@@ -1,6 +1,7 @@
 
-<h1> <%=current_user.email%>'s Art Collection!  </h1>
-<h2> Index View </h2>
+
+<h1> Index View </h1>
+<h2> <%= work.title %> </h2>
 
 <% @works.each do |w|  %> 
   <a href="/works/<%=w.id%>"><%=w.title %></a> <br>
