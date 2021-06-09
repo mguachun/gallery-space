@@ -16,13 +16,14 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    @work.user_id = current_user_id
+    @work.user_id == current_user.id
     if @work.save 
-        redirect_to work_path(@brand)
+        redirect_to work_path(@work)
     else
         render :new
     end
-end
+  end
+
   def edit
     @work = Work.find(params[:id])
   end
