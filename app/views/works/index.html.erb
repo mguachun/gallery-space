@@ -1,8 +1,8 @@
 
 
 <h1> Index View </h1>
-<h2> <%= work.title %> </h2>
-
-<% @works.each do |w|  %> 
-  <a href="/works/<%=w.id%>"><%=w.title %></a> <br>
+<ul>
+<% @works.each do |w| %> 
+    <li><%= link_to work.title %></li>
 <% end %>
+</ul>
