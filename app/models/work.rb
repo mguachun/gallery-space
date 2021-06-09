@@ -5,7 +5,7 @@ class Work < ApplicationRecord
     has_many :users, through: :comments
 
     validates :artist, presence: true
-    validates :name, presence: true
+  
     validates :medium, presence: true
 
 end
