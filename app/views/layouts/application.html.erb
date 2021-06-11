@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html> 
   <head>
-    <title>GallerySpace</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  
+    <meta charset="utf-8" />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>The GallerySpace</title>
+
   </head>
-
   <body>
+    <div class="nav">
+      <a href="/works">All Works</a> |
+      <a href="/works/new">Add a New Piece of Art</a> |
+      <a href="/signup"> Sign Up</a> |
+      <a href="/login">Log In</a> |
+      <a href="/logout">Log Out</a>
+    </div>
+    <br>
+    <h1 class="welcome"><u> Welcome to GallerySpace!</u></h1>
+    <h2 class="emphasis"><em>The virtual home for art collectors and enthusiasts </em></h2>
     <%= yield %>
   </body>
 </html>
