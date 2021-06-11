@@ -5,7 +5,6 @@ class CreateWorks < ActiveRecord::Migration[6.1]
       t.string :artist
       t.integer :year
       t.string :medium
-      t.integer :user_id
       t.integer :comment_id
 
 
