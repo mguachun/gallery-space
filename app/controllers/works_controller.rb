@@ -15,10 +15,9 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    puts @work.errors.full_messages
-    # @work.user_id = current_user.id
+    #  @work.user_id = current_user.id
     if @work.save 
-        redirect_to works_path
+        redirect_to works_path(@work)
     else
         render :new
     end
