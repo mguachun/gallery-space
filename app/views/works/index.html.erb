@@ -1,8 +1,7 @@
 
 
 <h1> Index View </h1>
-<ul>
-<% @works.each do |w| %> 
-    <li><%= link_to work.title %></li>
-<% end %>
-</ul>
+
+<% @works.each do |work| %>
+    <div><%= link_to work.title, works_path(work) %> | <%= work.artist %></div>
+  <% end %>

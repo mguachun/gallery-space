@@ -12,3 +12,18 @@
 
 
   
+# <% if @work.errors.any? %>
+# <div id="error_explanation">
+#   <h2><%= pluralize(@work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+#   <ul>
+#     <% @work.errors.full_messages.each do |error| %>
+#       <li><%= error %></li>
+#     <% end %>
+#   </ul>
+# </div>
+# <% end %> 
+# <%= form_for @work do |f| %>
+#   <%= render partial: "form", locals: { in_the_partial: f } %>
+#   <%= f.submit %> 
+# <% end %>
