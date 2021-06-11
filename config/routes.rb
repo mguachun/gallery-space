@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   resources :works
   resources :comments, only: [:new, :index, :create, :edit]
 
-  # resources :works do
-  #   resources :comments
-  # end
+  resources :works do
+    resources :comments
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
