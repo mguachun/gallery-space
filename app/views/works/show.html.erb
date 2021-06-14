@@ -1,20 +1,17 @@
-<h1>Show Page</h1>
-<h2><%= @work.title %></h2>
-<p>
-    Artist: <%= @work.artist %><br></br>
-    Year: <%= @work.year %><br></br>
-    Medium: <%= @work.medium %><br></br>
-</p>
+<h2>Show Page: </h2>
+<h3>Artist: <%= @work.artist %> </h3>
+<p>Title: <%= @work.title || "N/A" %></p>
+<p>Year: <%=  @work.year || "N/A" %></p> <br>
+<p>Medium: <%= @work.medium %> </p>
 
-    # <%= f.label "Title" %>
-    # <%= f.text_field :title %><br></br>
-    # <%= f.label "Artist" %>
-    # <%= f.text_field :artist %><br></br>
-    # <%= f.label "Year" %>
-    # <%= f.text_field :year %><br></br>
-    # <%= f.label "Medium" %>
-    # <%= f.text_field :medium %><br></br>
 
- 
+
+   <a href="/works/<%= @work.id %>/edit">Edit</a>
+
+   <form method="POST" action="/works/<%= @work.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE WORK">
+   </form>
+
 
 

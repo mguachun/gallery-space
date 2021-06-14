@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    include ApplicationHelper 
+    # include ApplicationHelper 
     private 
     def logged_in?
         !!session[:user_id]
@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
             redirect "/login"
         end
     end
-    
 
 end
 
