@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Work.destroy_all
+Comment.destroy_all
 
 # users = User.create!([
 # { email: "lori@gmail.com", password:"grossman"}, 
@@ -19,16 +21,16 @@
 # { email: "walpole@gmail.com", password:"bobbob"}, 
 # { email: "hg2020@gmail.com", password:"briggs"} ])
 
-Work.create!([{ title: "Mona Lisa", artist: "Leonard da Vinci" , year: "1503" , medium: "oil", user_id: 4},
-{ title:"Guernica", artist: "Pablo Picasso", year: "1937", medium: "oil", user_id: 8},
-{ title: "The Birth of Venus", artist: "Sandro Botticelli", year: "1485", medium: "tempera", user_id: 5},
-{ title: "The Kiss", artist: "Gustav Klimt", year: "1907", medium:"oil", user_id: 1},
-{ title: "American Gothic", artist: "Grant Wood", year: "1930" , medium: "oil", user_id: 10},
-{ title: "Nighthawks", artist: "Edward Hopper", year: "1942", medium: "oil", user_id:8},
-{ title: "The Nightwatch", artist: "Rembrandt", year: "1642" , medium: "oil", user_id:9},
-{ title: "Campbell's Soup Cans", artist: "Andy Warhol" , year: "1961" , medium: "syntheic polymer paint", user_id: 3},
-{ title: "The Great Wave off Kanagawa", artist: "Hokusai", year: "1820" , medium: "print", user_id: 2},
-{ title: "David", artist:"Michelangelo", year: "1501" , medium: "marble", user_id: 1}])
+Work.create!([{ title: "Mona Lisa", artist: "Leonard da Vinci" , year: "1503" , medium: "oil"},
+{ title:"Guernica", artist: "Pablo Picasso", year: "1937", medium: "oil"},
+{ title: "The Birth of Venus", artist: "Sandro Botticelli", year: "1485", medium: "tempera"},
+{ title: "The Kiss", artist: "Gustav Klimt", year: "1907", medium:"oil"},
+{ title: "American Gothic", artist: "Grant Wood", year: "1930" , medium: "oil"},
+{ title: "Nighthawks", artist: "Edward Hopper", year: "1942", medium: "oil"},
+{ title: "The Nightwatch", artist: "Rembrandt", year: "1642" , medium: "oil"},
+{ title: "Campbell's Soup Cans", artist: "Andy Warhol" , year: "1961" , medium: "syntheic polymer paint"},
+{ title: "The Great Wave off Kanagawa", artist: "Hokusai", year: "1820" , medium: "print"},
+{ title: "David", artist:"Michelangelo", year: "1501" , medium: "marble"} ])
 
 
 
