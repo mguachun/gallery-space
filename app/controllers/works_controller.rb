@@ -5,7 +5,8 @@ class WorksController < ApplicationController
   end
 
   def show
-    @work = Work.find_by(params[:id])
+    # byebug
+    @work = Work.find_by(id:params[:id])
   end
 
   def new
@@ -16,9 +17,8 @@ class WorksController < ApplicationController
   
   def create
     @work = Work.new(work_params)
-     @work.user_id = current_user.id
+   
     if @work.save
-      # @work.save
       # byebug
         redirect_to work_path(@work)
     else
@@ -49,6 +49,6 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:title, :artist, :year, :medium, :user_id)
+    params.require(:work).permit(:title, :artist, :year, :medium)
   end
 end
