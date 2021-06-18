@@ -6,11 +6,18 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+
   end
 
   def new
-    @comment = Comment.new
-  end
+    if params[:brand_id] && @work = Work.find(params[:work_id])
+      @comment = Work.new(work_id: params[:work_id])
+      else 
+        @comment = Comment.new
+        @comment.build_work
+      end
+    end
+
 
   def create
     @comment = Comment.new(comment_params)
