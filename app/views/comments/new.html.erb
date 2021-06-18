@@ -2,25 +2,5 @@
 <h1>Create a new comment!</h1>
 
 <%= render partial: "layouts/error", locals: {object: @comment}  %>
-<%= form_for @comment do |f| %>
-    <%= render partial: "form", locals: { in_the_partial: f } %>
-    <h3>And add works:</h3>
-    <%= f.fields_for :works do |s|  %>
-      <%= s.label "Title" %> 
-      <%= s.text_field :title, required: true %><br></br>
-      <%= s.label(:artist) %> 
-      <%= s.text_field :artist, required: true  %><br></br>
-      <%= s.label(:year) %> 
-      <%= s.text_field :year, required: true %><br></br>
-      <%= s.label(:medium) %>
-      <%= s.text_field :medium %><br></br>
-      <hr>
-        <% end %>
-      <%= f.submit %>
-    <% end %>
 
-
-    <hr>
-      <% end %> 
-    <%= f.submit %> 
-<% end %>
+ <%= render partial: "form" %>
