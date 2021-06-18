@@ -1,14 +1,15 @@
-<%= form_for @work do |f| %>
-  <%= render partial: "form", locals: { in_the_partial |f| }
-  <h3>And add a comment:</h3>
-  <%= f.fields_for :works do |s| %>
-      <%= s.label "Headline" %>
-      <%= s.text_field :headline %>
-      <%= s.label "Comment" %>
-      <%= s.text_field :comment %>
+<% if @work.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+    <ul>
+      <% @work.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
       <% end %>
-      <%= f.submit %>
-  <% end %>
-
-
-  
+    </ul>
+  </div>
+<% end %> 
+<%= form_for @work do |f| %>
+    <%= render partial: "form", locals: { in_the_partial: f } %>
+   
+<% end %>
