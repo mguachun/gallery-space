@@ -1,0 +1,9 @@
+<%= render partial: "layouts/error", locals: {object: @comment}  %>
+<%= form_for(@comment) do |f| %>
+    <%= f.label "Headline" %> 
+    <%= f.text_field :headline%><br></br>
+    <%= f.label "Description" %> 
+    <%= f.text_field :description %><br></br>
+
+    <%= f.submit %> 
+<% end %>
