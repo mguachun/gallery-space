@@ -9,11 +9,19 @@
   </head>
   <body>
     <div class="nav">
-      <a href="/works">All Works</a> |
-      <a href="/works/new">Add a New Piece of Art</a> |
-      <a href="/signup"> Sign Up</a> |
-      <a href="/login">Log In</a> |
-      <a href="/logout">Log Out</a>
+    <div></div>
+    <% if !current_user %> 
+    <%= link_to 'SignUp', new_user_path %>
+    <%= link_to 'Login', login_path %>
+    <% else %>
+    <a href="/works">All Works</a> |
+    <a href="/works/new">Add a New Piece of Art</a> |
+    <a href="/comments/new">Add a New Comment</a> |
+    <%= link_to 'Log Out', logout_path, method: :delete %>
+
+    <% end %>
+
+  
     </div>
     <br>
     <h1 class="welcome"><u> Welcome to GallerySpace!</u></h1>
