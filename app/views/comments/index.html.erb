@@ -1,5 +1,4 @@
 <h1> Comments Index</h1>
 
-<% @comments.each do |c| %>
-    # <div><%= link_to comment.headline, comments_path(comment) %></div>
-  <% end %>
+<% @comment.each do |c| %>
+     <div><%= link_to comment.headline, comment_path(comment) %></div>
