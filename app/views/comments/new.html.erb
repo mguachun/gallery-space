@@ -1,6 +1,4 @@
 
 <h1>Create a new comment!</h1>
 
-<%= render partial: "layouts/error", locals: {object: @comment}  %>
-
- <%= render partial: "form" %>
+<%= render partial: "form", locals: {comment: @comment}  %>
