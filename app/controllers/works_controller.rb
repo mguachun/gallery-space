@@ -7,7 +7,7 @@ class WorksController < ApplicationController
   def show
     # byebug
     @work = Work.find_by(id:params[:id])
-    byebug
+    # byebug
     @comments = @work.comments 
   
   end
