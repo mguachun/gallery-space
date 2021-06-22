@@ -1,5 +1,6 @@
-<%= render partial: "layouts/error", locals: {object: @comment}  %>
-<%= form_for(@comment) do |f| %>
+<%= render partial: "layouts/error", locals: {object: comment}  %>
+
+<%= form_for(comment, url: work_comments_path(comment.work)) do |f| %>
     <%= f.label "Headline" %> 
     <%= f.text_field :headline%><br></br>
     <%= f.label "Description" %> 
