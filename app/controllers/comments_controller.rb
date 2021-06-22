@@ -10,21 +10,24 @@ class CommentsController < ApplicationController
   end
 
   def new
-    if params[:brand_id] && @work = Work.find(params[:work_id])
-      @comment = Work.new(work_id: params[:work_id])
-      else 
-        @comment = Comment.new
-        @comment.build_work
-      end
+    @work = Work.find(params[:work_id])
+    if @work 
+      @comment = @work.comments.build
+    else 
+      redirect_to works_path
     end
-
+  end
+  
 
   def create
-    @comment = Comment.new(comment_params)
+    @work = Work.find(params[:work_id])
+      @comment = @work.comments.create(comment_params)
+      @comment.user = current_user
     if @comment.save
-      redirect_to comments_path
-    else 
-      render :new
+         redirect_to work_path(@work)
+      else
+        redirect_to new_work_comment(@work)
+      end
     end
   end
 
@@ -53,4 +56,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:headline, :description)
   end
-end
+
