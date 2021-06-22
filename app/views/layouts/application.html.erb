@@ -11,11 +11,10 @@
     <div class="nav">
     <div></div>
     <% if !current_user %> 
-    <%= link_to 'SignUp', new_user_path %>
-    <%= link_to 'Login', login_path %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Login", login_path %>
     <% else %>
-    <a href="/works">All Works</a> |
-    <a href="/works/new">Add a New Piece of Art</a> |
+    <%= link_to "All Works", works_path %> |
     <%= link_to 'Log Out', logout_path, method: :delete %>
 
     <% end %>
@@ -24,7 +23,7 @@
     </div>
     <br>
     <h1 class="welcome"><u> Welcome to GallerySpace!</u></h1>
-    <h2 class="emphasis"><em>The virtual home for art collectors and enthusiasts </em></h2>
+    <h2 class="emphasis"><em>A virtual space for art collectors and enthusiasts </em></h2>
     <%= yield %>
   </body>
 </html>
