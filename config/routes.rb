@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
   resources :users 
-  resources :works
+  resources :works, only: [:index, :show]
   # resources :comments, only: [:new, :index, :create, :edit]
 
   resources :works do
-    resources :comments, only: [:new, :index, :create, :edit]
+    resources :comments
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
