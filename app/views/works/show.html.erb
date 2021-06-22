@@ -1,17 +1,9 @@
 <h2>Show Page: </h2>
-<h3>Artist: <%= @work.artist %> </h3>
-<p>Title: <%= @work.title || "N/A" %></p>
-<p>Year: <%=  @work.year || "N/A" %></p> <br>
-<p>Medium: <%= @work.medium %> </p>
+<h3><em>Artist:</em> <%= @work.artist %> </h3>
+<p><em>Title:</em> <%= @work.title %></p>
+<p><em>Year:</em> <%=  @work.year %></p>
+<p><em>Medium:</em> <%= @work.medium %> </p>
 
 
 
-   <a href="/works/<%= @work.id %>/edit">Edit</a>
-
-   <form method="POST" action="/works/<%= @work.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="DELETE WORK">
-   </form>
-
-
-
+<h3><%= link_to 'Add a Comment', new_work_comment_path( @work, @comment) %></h3>
