@@ -3,3 +3,9 @@
 <%= form_for(@comment) do |f| %>
     <%= render partial: 'form', locals: {f: f} %>
   <% end %>
+
+  <div>
+<%= button_to "Delete Comment", work_comment_path(@work, @comment), method: :delete, data: { confirm: "Are you sure?"} %>
+
+
+</div>

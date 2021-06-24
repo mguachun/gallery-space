@@ -4,6 +4,7 @@
 <p><em>Year:</em> <%=  @work.year %></p>
 <p><em>Medium:</em> <%= @work.medium %> </p>
 
-
+<% @comments.each do |comment| %>
+    <% end %>
 
 <h3><%= link_to 'Add a Comment', new_work_comment_path( @work, @comment) %></h3>

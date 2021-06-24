@@ -21,10 +21,12 @@ class CommentsController < ApplicationController
 
   def create
     @work = Work.find(params[:work_id])
+
       @comment = @work.comments.create(comment_params)
       @comment.user = current_user
+  
     if @comment.save
-         redirect_to work_path(@work)
+         redirect_to works_path
       else
         redirect_to new_work_comment(@work)
       end

@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
-    def welcome
-    end
 
     def new 
         @user = User.new
@@ -23,17 +21,8 @@ class SessionsController < ApplicationController
             redirect_to '/login'
         end
     end
-    def logged_in
-          # check that they register successfully
-          if user.valid? 
-            session[:user_id] = user.id   #log them in
-            redirect_to user_path(user)
-        else
-            flash[:message] = "Oops, something went wrong!"
-            redirect_to login_path
-        end
-    end
-    
+
+
        
 
  

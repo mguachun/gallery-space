@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    # include ApplicationHelper 
+ 
     private 
     def logged_in?
         !!session[:user_id]
