@@ -1,7 +1,7 @@
 <h1> Comments Index</h1>
 
-<% @comments.each do |c| %>
-     <p><%= link_to work.title, work_comments_path(@comment, @work) %></p>
+<% @comments.each do |comment| %>
+     <p><%= link_to comment.headline, work_comment_path(comment.work_id, comment.id) %></p>
 <% end %>
 
 
