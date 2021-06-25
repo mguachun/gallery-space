@@ -5,4 +5,5 @@
 <h3>Headline: <%= @comment.headline %></h3>
 <h4>Description: <%= @comment.description %></h4>
 
-<%= link_to "delete", comment_path(@comment), method: 'delete' %>
+<%= link_to "edit", edit_work_comment_path(@comment), method: 'patch' %>
+<%= link_to "delete", work_comment_path(@comment), method: 'delete' %>
