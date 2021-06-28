@@ -1,12 +1,10 @@
 <h1>Edit Comment</h1>
 
-<%= form_for(@comment, @work) do |f| %>
-    <%= render partial: 'form', locals: {f: f} %>
-  <% end %>
+<%= form_for (@comment) do |f| %>
+    <%= f.label "Headline" %> 
+    <%= f.text_field :headline%><br></br>
+    <%= f.label "Description" %> 
+    <%= f.text_field :description %><br></br>
 
-  <div>
-  <%= button_to "Edit Comment", edit_work_comment_path(c.id) %>
-<%= button_to "Delete Comment", work_comment_path(@work, @comment), method: :delete, data: { confirm: "Are you sure?"} %>
-
-
-</div>
+    <%= f.submit %> 
+<% end %>
