@@ -1,13 +1,13 @@
 class WorksController < ApplicationController
-
+  before_action :check_login?
   def index
     @works = Work.all
   end
 
   def show
-    # byebug
+
     @work = Work.find_by(id:params[:id])
-    # byebug
+    
     @comments = @work.comments 
   
   end
@@ -22,7 +22,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
    
     if @work.save
-      # byebug
+
         redirect_to work_path(@work)
     else
         render :new

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  
+  before_action :check_login?
   def index
     @comments = Comment.all
   end
@@ -32,23 +32,22 @@ class CommentsController < ApplicationController
         redirect_to new_work_comment(@work)
       end
     end
-  end
+
 
   def edit 
-    byebug
     @comment = Comment.find(params[:id])
     @work = @comment.work 
-    if @comment.user = current_user
-      redirect_to edit_work_comment_path(@work)
-    else 
-      redirect_to work_comments_path
-    end
+    # if @comment.user = current_user
+    #   redirect_to edit_work_comment_path(@work)
+    # else 
+    #   redirect_to work_comments_path
+    # end
   end
 
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update(commment_params)
+    @comment.update(comment_params)
     if @comment.valid?
         redirect_to comments_path 
     else
@@ -57,6 +56,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    byebug
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_path 
@@ -67,4 +67,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:headline, :description)
   end
+end
 
