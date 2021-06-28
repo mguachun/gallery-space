@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
 
+  get 'authorized', to: 'sessions#page_requires_login'
+
   resources :users 
   resources :works, only: [:index, :show]
-  # resources :comments, only: [:new, :index, :create, :edit]
+  resources :comments
 
   resources :works do
     resources :comments

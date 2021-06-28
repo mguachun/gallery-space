@@ -1,12 +1,14 @@
 class ApplicationController < ActionController::Base
- 
+   
+    helper_method :current_user, :logged_in?
+
     private 
     def logged_in?
         !!session[:user_id]
     end
 
     def current_user
-        User.find_by_id(session[:user_id])
+        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
     def find_user
@@ -26,15 +28,11 @@ class ApplicationController < ActionController::Base
   
 
     def redirect_if_logged_in
-        if logged_in?
-            redirect "/"
-        end
+        redirect_to user_path(current_user) if logged_in?
     end
 
     def redirect_if_not_logged_in
-        unless logged_in?
-            redirect "/login"
-        end
+        redirect_to root_path if !logged_in?
     end
 
 end

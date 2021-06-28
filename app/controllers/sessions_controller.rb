@@ -23,7 +23,13 @@ class SessionsController < ApplicationController
     end
 
 
-       
+    if user.valid? 
+        session[:user_id] = user.id   #log them in
+        redirect_to user_path(user)
+    else
+        flash[:message] = "Oops, something went wrong!"
+        redirect_to login_path
+    end
 
  
 end

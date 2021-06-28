@@ -2,7 +2,9 @@
 <html> 
   <head>
   
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8" />
+   
 
     <title>The GallerySpace</title>
 
@@ -12,6 +14,7 @@
     <div></div>
     <% if logged_in? %> 
     <%= link_to "All Works", works_path %> |
+    <%= link_to "All Comments", comments_path %>|
     <%= link_to "Log Out", logout_path %> |
     <% else %>
     <%= link_to "Sign Up", new_user_path %>|
@@ -21,9 +24,9 @@
 
   
     </div>
-    <br>
-    <h1 class="welcome"><u> Welcome to GallerySpace!</u></h1>
-    <h2 class="emphasis"><em>A virtual space for art collectors and enthusiasts </em></h2>
+  
+   
     <%= yield %>
   </body>
 </html>
+

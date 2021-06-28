@@ -1,9 +1,9 @@
-<h1>Comments Show Page</h1>
+<h1>All Comments</h1>
 
 
 <h2><%= @comment.work.title %> </h2>
 <h3>Headline: <%= @comment.headline %></h3>
 <h4>Description: <%= @comment.description %></h4>
 
-<%= link_to "edit", edit_work_comment_path(@comment), method: 'patch' %>
+<%= link_to "edit", edit_work_comment_path(@work, @comment), method: 'patch' %>
 <%= link_to "delete", work_comment_path(@comment), method: 'delete' %>

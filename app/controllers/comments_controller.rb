@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+    @work = @comment.work
 
   end
 
@@ -34,8 +35,16 @@ class CommentsController < ApplicationController
   end
 
   def edit 
+    byebug
     @comment = Comment.find(params[:id])
+    @work = @comment.work 
+    if @comment.user = current_user
+      redirect_to edit_work_comment_path(@work)
+    else 
+      redirect_to work_comments_path
+    end
   end
+
 
   def update
     @comment = Comment.find(params[:id])
