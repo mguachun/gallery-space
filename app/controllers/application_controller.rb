@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
         @user = User.find_by_email(params[:email])
     end
 
-    def logged_in
+    def logged_in(user)
         # check that they register successfully
-        if user.valid? 
+        if user.valid?
           session[:user_id] = user.id   #log them in
           redirect_to user_path(user)
       else
@@ -28,11 +28,11 @@ class ApplicationController < ActionController::Base
   
 
     def redirect_if_logged_in
-        redirect_to user_path(current_user) if logged_in?
+        redirect_to user_path(current_user) if check_login?
     end
 
     def redirect_if_not_logged_in
-        redirect_to root_path if logged_in
+        redirect_to root_path if check_login?
     end
 
    
