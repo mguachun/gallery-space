@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
   def show
     @comment = Comment.find(params[:id])
     @work = @comment.work
+    current_user
+
 
   end
 
@@ -56,7 +58,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    byebug
+    
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_path 
