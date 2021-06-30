@@ -22,8 +22,27 @@ class SessionsController < ApplicationController
         end
     end
 
+    def omniauth #if they are logging in with oauth
+        # if that user has already logged in this way
+        user = User.find_or_create_by(uid: auth["uid"]) do |u|
+            u.email = auth["info"]["email"]
+            u.password = SecureRandom.hex(15)
+        
+        end
 
-   
+        # check that they register successful
+        if user.valid? 
+            session[:user_id] = user.id   #log them in
+            redirect_to user_path(user)
+        else
+            flash[:message] = "Oops, something went wrong!"
+            redirect_to login_path
+        end
+    end
     
- 
+    def auth
+        request.env["omniauth.auth"]
+    end
+
+
 end
