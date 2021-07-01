@@ -1,0 +1,5 @@
+<h1>Latest Comments </h1>
+
+<% @comments.each do |comment| %>
+    <p><%= link_to comment.headline, work_comment_path(comment.work_id, comment.id) %></p>
+<% end %>
