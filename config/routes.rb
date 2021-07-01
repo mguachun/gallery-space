@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'authorized', to: 'sessions#page_requires_login'
 
+
+  get '/comments/latest_comments' => 'comments#latest_comments'
+
   resources :users 
   resources :works, only: [:index, :show]
   resources :comments
