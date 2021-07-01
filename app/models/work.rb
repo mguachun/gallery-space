@@ -9,4 +9,5 @@ class Work < ApplicationRecord
     validates :year, presence: true
     validates :medium, presence: true
 
+
 end
