@@ -5,17 +5,17 @@ class WorksController < ApplicationController
   end
 
   def show
-
     @work = Work.find_by(id:params[:id])
     
     @comments = @work.comments 
-  
   end
 
+
   def new
-      @work = Work.new
-      # @work.build_comment
-   end
+    @work = Work.new
+    # @work.build_comment
+  end
+
 
   
   def create

@@ -8,8 +8,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @work = @comment.work
     current_user
-
-
   end
 
   def new
@@ -39,11 +37,10 @@ class CommentsController < ApplicationController
   def edit 
     @comment = Comment.find(params[:id])
     @work = @comment.work 
-    # if @comment.user = current_user
-    #   redirect_to edit_work_comment_path(@work)
-    # else 
-    #   redirect_to work_comments_path
-    # end
+  end
+
+  def latest_comments
+    @comments = Comment.latest_user_comments
   end
 
 
@@ -58,7 +55,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_path 
