@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :check_login?
+  
+  # before_action :redirect_if_not_logged_in 
+
   def index
+  
     @comments = Comment.all
   end
 
@@ -35,8 +38,12 @@ class CommentsController < ApplicationController
 
 
   def edit 
-    @comment = Comment.find(params[:id])
+     @comment = Comment.find(params[:id])
+     if @comment.user == current_user
     @work = @comment.work 
+    else 
+      redirect_to works_path
+    end
   end
 
   def latest_comments

@@ -4,7 +4,18 @@ class ApplicationController < ActionController::Base
 
     private 
     def check_login?
-        redirect_to new_user_path unless !!session[:user_id]
+        !!session[:user_id]
+    end
+
+    def redirect_if_logged_in
+        redirect_to user_path(current_user) if check_login?
+    end
+
+    def redirect_if_not_logged_in
+       unless current_user
+        redirect_to "/"
+       end
+       
     end
 
     def current_user

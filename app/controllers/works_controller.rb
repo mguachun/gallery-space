@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
-  before_action :check_login?
+  before_action :redirect_if_not_logged_in
+  
   def index
     @works = Work.all
   end
