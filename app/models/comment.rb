@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
     belongs_to :work
     belongs_to :user
 
+    validates :description, presence: true
+
  scope :latest_user_comments, -> {where ("comments.last(3)")}
 
 

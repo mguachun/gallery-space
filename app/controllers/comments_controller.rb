@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
     if @comment.save
          redirect_to works_path
       else
-        redirect_to new_work_comment(@work)
+        render :new
       end
     end
 
